@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "CalenderPartial";
+}
+<header>
+<link href="~/Content/WebCalender/jsDatePick_ltr.min.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="~/Scripts/Calender/jsDatePick.min.1.3.js"></script>
+
+<script type="text/javascript">
+	window.onload = function(){
+		
+		
+		g_globalObject = new JsDatePick({
+			useMode:1,
+			isStripped:true,
+			target:"div3_example"
+			/*selectedDate:{				This is an example of what the full configuration offers.
+				day:5,						For full documentation about these settings please see the full version of the code.
+				month:9,
+				year:2006
+			},
+			yearsRange:[1978,2020],
+			limitToToday:false,
+			cellColorScheme:"beige",
+			dateFormat:"%m-%d-%Y",
+			imgPath:"img/",
+			weekStartDay:1*/
+		});		
+		
+		g_globalObject.setOnSelectedDelegate(function(){
+			var obj = g_globalObject.getSelectedDay();
+			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
+			document.getElementById("div3_example_result").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
+		});
+		
+		
+		
+		g_globalObject2 = new JsDatePick({
+			useMode:1,
+			isStripped:false,
+			target:"div4_example",
+			cellColorScheme:"beige"
+			/*selectedDate:{				This is an example of what the full configuration offers.
+				day:5,						For full documentation about these settings please see the full version of the code.
+				month:9,
+				year:2006
+			},
+			yearsRange:[1978,2020],
+			limitToToday:false,
+			dateFormat:"%m-%d-%Y",
+			imgPath:"img/",
+			weekStartDay:1*/
+		});
+		
+		g_globalObject2.setOnSelectedDelegate(function(){
+			var obj = g_globalObject2.getSelectedDay();
+			alert("a date was just selected and the date is : " + obj.day + "/" + obj.month + "/" + obj.year);
+			document.getElementById("div3_example_result").innerHTML = obj.day + "/" + obj.month + "/" + obj.year;
+		});		
+		
+	};
+</script>
+    </header>
+
+<h2>Calendar</h2>
+<div id="div3_example" style="margin: 10px 0px 30px; border: 1px dashed red; width: 205px; height: 230px; position: relative;">
+    <div class="JsDatePickBox" style="position: absolute; top: 0px; left: 0px;">
+        <div class="hiddenBoxLeftWall">
+            <div class="leftTopCorner"></div>
+            <div class="leftWall" style="height: 182px;"></div>
+            <div class="leftBottomCorner"></div>
+        </div>
+        <div class="boxMainStripped">
+            <div class="boxMainInner">
+                <div class="controlsBar" globalnumber="324">
+                    <div class="monthForwardButton" globalnumber="324"></div>
+                    <div class="monthBackwardButton" globalnumber="324"></div>
+                    <div class="yearForwardButton" globalnumber="324"></div>
+                    <div class="yearBackwardButton" globalnumber="324"></div>
+                    <div class="controlsBarText">Janaury, 2013</div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="tooltip"></div>
+                <div class="weekDaysRow">
+                    <div class="weekDay">Mon</div>
+                    <div class="weekDay">Tue</div>
+                    <div class="weekDay">Wed</div>
+                    <div class="weekDay">Thu</div>
+                    <div class="weekDay">Fri</div>
+                    <div class="weekDay">Sat</div>
+                    <div class="weekDay" style="margin-right: 0px;">Sun</div>
+                </div>
+                <div class="boxMainCellsContainer">
+                    <div class="skipDay"></div>
+                    <div globalnumber="324"  class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">1</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">2</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">3</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">4</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">5</div>
+                    <div globalnumber="324" style="margin-right: 0px; background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;" class="dayNormal">6</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">7</div>
+                    <div globalnumber="324" istoday="1" class="dayNormalToday" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">8</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">9</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">10</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">11</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">12</div>
+                    <div globalnumber="324" style="margin-right: 0px; background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;" class="dayNormal">13</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">14</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">15</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">16</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">17</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">18</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">19</div>
+                    <div globalnumber="324" style="margin-right: 0px; background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;" class="dayNormal">20</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">21</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">22</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">23</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">24</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">25</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">26</div>
+                    <div globalnumber="324" style="margin-right: 0px; background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;" class="dayNormal">27</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">28</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">29</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">30</div>
+                    <div globalnumber="324" class="dayNormal" style="background-image: url(../Images/Calender/ocean_blue_dayNormal.gif); background-position: 0% 0%; background-repeat: no-repeat no-repeat;">31</div>
+
+                </div>
+                <div class="clearfix">
+                </div>
+              </div>
+        </div>
+        <div class="hiddenBoxRightWall">
+            <div class="rightTopCorner"></div>
+            <div class="rightWall" style="height: 182px;"></div>
+            <div class="rightBottomCorner"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

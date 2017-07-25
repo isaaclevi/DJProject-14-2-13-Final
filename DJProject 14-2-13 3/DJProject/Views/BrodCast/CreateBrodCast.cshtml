@@ -1,0 +1,50 @@
+﻿@model DJProject.Models.BrodCast
+
+@{
+    ViewBag.Title = "CreateBrodCast";
+}
+
+<h2>CreateBrodCast</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BrodCast</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BordCastName)
+        </div>
+        <div class="editor-field">
+                @Html.EditorFor(model => model.BordCastName)
+                @Html.ValidationMessageFor(model => model.BordCastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+                @Html.EditorFor(model => model.StartDate)
+                @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+                @Html.EditorFor(model => model.EndDate)
+                @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+ 
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

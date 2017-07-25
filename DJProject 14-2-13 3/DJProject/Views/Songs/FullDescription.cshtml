@@ -1,0 +1,40 @@
+﻿@model DJProject.Models.Songs
+
+@{
+    ViewBag.Title = "FullDescription";
+}
+
+<h2>FullDescription</h2>
+
+<fieldset>
+    <legend>Songs</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SongName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SongName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Path)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Path)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpLoadDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpLoadDate)
+    </div>
+</fieldset>
+<ul id="Contolls">
+    @if(User.IsInRole("Administrator"))
+    {
+     <li>@Html.ActionLink("Delete","Delete",new { SongsID=Model.SongsID })</li>
+     <li>@Html.ActionLink("Edit", "Edit", new { SongsID=Model.SongsID })</li>
+    }
+    <li>@Html.ActionLink("Back to List", "Index")</li>
+</ul>

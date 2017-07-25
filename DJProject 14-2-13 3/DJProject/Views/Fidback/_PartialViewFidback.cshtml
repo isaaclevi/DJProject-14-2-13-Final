@@ -1,0 +1,24 @@
+﻿@model DJProject.Models.Fidback
+
+<fieldset>
+    <legend>Fidback</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Commant)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Commant)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CommentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

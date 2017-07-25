@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DJProject.Models.Fidback>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+@section Title{
+        <section class="Title">
+            <div class="content-wrapper">
+                Fidback List
+            </div>
+        </section>
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Creat New BordCast","CreateBrodCast(DateTime Date)")
+</p>
+
+@if(Model != null)
+{    
+    foreach (var BrodCast in Model)
+    {
+        @Html.Partial("_PartialView",BrodCast) 
+    }
+}

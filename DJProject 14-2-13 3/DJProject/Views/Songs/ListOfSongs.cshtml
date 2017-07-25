@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DJProject.Models.Songs>
+
+@{
+    ViewBag.Title = "ListOfSongs";
+}
+
+<h2>ListOfSongs</h2>
+
+<ul>
+    <li>@Html.ActionLink("Add New Event","CreateEvent")</li>
+    <li>@Html.ActionLink("Search","SearchEvents")</li>
+</ul>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SongName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpLoadDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SongType)
+        </th>
+        <th></th>
+    </tr>
+@if(Model!=null)
+{
+    foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpLoadDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SongsID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SongsID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SongsID })
+            </td>
+        </tr>
+    }
+}
+</table>

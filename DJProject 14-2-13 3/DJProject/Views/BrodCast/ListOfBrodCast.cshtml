@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DJProject.Models.BrodCast>
+
+@{
+    ViewBag.Title = "ListOfBrodCast";
+}
+
+<h2>ListOfBrodCast</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BordCastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th></th>
+    </tr>
+@if(Model!=null)
+{
+    foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BordCastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BrodCastId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BrodCastId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BrodCastId })
+            </td>
+        </tr>
+    }
+}
+</table>

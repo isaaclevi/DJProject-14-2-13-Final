@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DJProject.Models.Events>
+
+<fieldset>
+    <legend>Events</legend>
+    <table>
+        <tr>
+    <td class="display-label">
+         @Html.DisplayNameFor(model => model.EventName)
+    </td>
+    
+    <td class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </td>
+            </tr>
+    @if(Model!=null)
+    {
+        foreach (var item in Model) 
+        {
+            <tr>
+                <td class="display-field">
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+
+                <td class="display-field">
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                @Html.ActionLink("Details","FullDescription",Model)
+                @if(User.IsInRole("Administrator"))
+                {
+                 @Html.ActionLink("Delete","Delete",new { EventsID=item.EventId })
+                 @Html.ActionLink("Edit", "Edit", new { EventsID=item.EventId })
+                }
+                </td>
+            </tr>
+        }
+     }
+</table>
+</fieldset>

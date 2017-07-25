@@ -1,0 +1,59 @@
+﻿@model DJProject.Models.Songs
+
+@{
+    ViewBag.Title = "CreateSong";
+}
+
+<h2>CreateSong</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Songs</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SongName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SongName)
+            @Html.ValidationMessageFor(model => model.SongName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Path)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Path)
+            @Html.ValidationMessageFor(model => model.Path)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UpLoadDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UpLoadDate)
+            @Html.ValidationMessageFor(model => model.UpLoadDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SongType)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.SongType,(SelectList)ViewBag.SongTypeList)
+            @Html.ValidationMessageFor(model => model.SongType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

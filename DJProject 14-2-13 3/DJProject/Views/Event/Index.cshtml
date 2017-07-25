@@ -1,0 +1,13 @@
+﻿@model IEnumerable<DJProject.Models.Events>
+
+@{
+    ViewBag.Title = "Events List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    <li>@Html.ActionLink("List Of Events","ListOfEvents")</li>
+    <li>@Html.ActionLink("List Of Partial Events","_PartialViewEvent")</li>
+    <li>@Html.ActionLink("Search","SearchEvents")</li>
+</ul>

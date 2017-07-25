@@ -1,0 +1,64 @@
+﻿<!doctype html>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+<html>
+<head>
+	<title>רדיו לטיני עם דיג'יי גילי</title>
+</head>
+<body>
+    <div>
+	<header>
+		
+	</header>
+        <section id="login">
+            @Html.Partial("_LoginPartial")
+        </section>
+        <nav>
+        <!-- Navigation -->
+	        <ul>
+		        <li>@Html.ActionLink("שירים","index","Songs")</li>
+                <li>@Html.ActionLink("ארועים","index","Event")</li>
+
+	        </ul>
+        </nav>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+		<!-- Footer -->
+		<div>
+			<section id="about">
+				<header>
+					<h3>About</h3>
+				</header>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+			</section>
+			<section id="Sites">
+				<header>
+					<h3>אתרים מוצעים</h3>
+				</header>
+				<ul>
+					<li><a href="http://www.listen2myradio.com/">Listen2MyRadio</a></li>
+					<li><a href="#">FreelanceSwitch</a></li>
+				</ul>
+			</section>
+			<section id="popular">
+				<header>
+					<h3>Popular</h3>
+				</header>
+				<ul>
+					<li><a href="http://www.facebook.com/groups/127604420733053/">דף הפייסבוק שלי</a></li>
+					<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+					<li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

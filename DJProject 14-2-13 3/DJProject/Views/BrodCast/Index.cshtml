@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DJProject.Models.BrodCast>
+
+@{
+    ViewBag.Title = "BrodCastTitle";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Creat New BordCast","CreateBrodCast(DateTime Date)")
+</p>
+
+@if(Model != null)
+{    
+    foreach (var BrodCast in Model)
+    {
+        @Html.Partial("_PartialView",BrodCast) 
+    }
+}

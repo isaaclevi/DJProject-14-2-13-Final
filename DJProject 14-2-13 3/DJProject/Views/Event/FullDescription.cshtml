@@ -1,0 +1,88 @@
+﻿@model DJProject.Models.Events
+
+@{
+    ViewBag.Title = "FullDescription";
+}
+
+<h2>FullDescription</h2>
+
+<fieldset>
+    <legend>Events</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EventName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EventName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plase)
+    </div>
+    <div class="display-field" >
+        @Html.DisplayFor(model => model.Plase)
+    </div>
+
+</fieldset>
+<aside onload="HideMap()">
+    <div onload="geocode();">
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+
+       <script src="http://maps.google.com/maps/api/js?sensor=false" 
+               type="text/javascript"></script> 
+
+       <div id="map" style="width: 400px; height: 300px;"></div> 
+
+       <input type="text" id="search" value="@Model.Plase" onload="geocode();">
+       <input type="button" onclick="geocode();" value="Search">
+
+       <script type="text/javascript">
+           var map = new google.maps.Map(document.getElementById('map'), {
+               mapTypeId: google.maps.MapTypeId.TERRAIN,
+               center: new google.maps.LatLng(31.97264, 34.776854),
+               zoom: 13
+           });
+
+           var geocoder = new google.maps.Geocoder();
+
+           function geocode() {
+               geocoder.geocode({
+                   'address': document.getElementById('search').value
+               },
+               function (results, status) {
+                   if (status == google.maps.GeocoderStatus.OK) {
+                       new google.maps.Marker({
+                           position: results[0].geometry.location,
+                           map: map
+
+                       });
+                       map.setCenter(results[0].geometry.location);
+                   }
+               });
+
+           }
+       </script> 
+    </div>
+</aside>
+<ul id="Contolls">
+    @if(User.IsInRole("Administrator"))
+    {
+     <li>@Html.ActionLink("Delete","Delete",new { EventsID=Model.EventId })</li>
+     <li>@Html.ActionLink("Edit", "Edit", new { EventsID=Model.EventId })</li>
+    }
+    <li>@Html.ActionLink("Back to List", "Index")</li>
+</ul>

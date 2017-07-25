@@ -1,0 +1,67 @@
+﻿<!doctype html>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+<html>
+<head>
+	<title>רדיו לטיני עם דיג'יי גילי</title>
+</head>
+<body>
+    <div>
+	<header>
+		
+	</header>
+        <section id="login">
+            @Html.Partial("_LoginPartial")
+        </section>
+	    <nav>
+		<!-- Navigation -->
+	        <ul>
+		        <li class="selected">@Html.ActionLink("דף בית","Index","Home")</li>
+		        <li>@Html.ActionLink("שידור","Transmition","Home")</li>
+		        <li>@Html.ActionLink("מצעד הפזמונים","MusicCharts","Songs")</li>
+                <li>@Html.ActionLink("ארועים","ListOfEvents","event")</li>
+	        </ul>
+	    </nav>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+		<!-- Footer -->
+		<div>
+			<section id="about">
+				<header>
+					<h3>אודות</h3>
+				</header>
+				<p>כל סוגי המוסיקה הלטינית.</p>
+                <p>בלוז, ג'אז, מוסיקת פופ, ראפ היפופ, רגאיי, קאנטרי, רוק, מוסיקת העידן החדש...</p>
+                <p>מספר 1 של הרדיו הלטיני!</p>
+			</section>
+			<section id="Sites">
+				<header>
+					<h3>אתרים</h3>
+				</header>
+				<ul>
+					<li><a href="http://www.listen2myradio.com/">Listen2MyRadio</a></li>
+					<li><a href="http://www.100fm.co.il">FreelanceSwitch</a></li>
+				</ul>
+			</section>
+			<section id="popular">
+				<header>
+					<h3>פופולארי</h3>
+				</header>
+				<ul>
+					<li><a href="http://www.facebook.com/groups/127604420733053/">דף הפייסבוק שלי</a></li>
+					<li><a href="http://www.walla.co.il">וואלה</a></li>
+					<li><a href="http://www.ynet.co.il">ynet</a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

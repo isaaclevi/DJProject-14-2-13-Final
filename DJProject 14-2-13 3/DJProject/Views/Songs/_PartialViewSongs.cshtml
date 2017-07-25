@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DJProject.Models.Songs>
+@{
+    ViewBag.SongsTitle = "SongTitle";
+}
+
+<fieldset>
+    <legend>Songs</legend>
+    <table>
+        <tr>
+            <td class="display-label">
+                 @Html.DisplayNameFor(model => model.SongName)
+            </td>
+            <td class="display-label">
+                 @Html.DisplayNameFor(model => model.SongType)
+            </td>
+        </tr>
+        @if(Model!=null)
+        {
+            foreach (var item in Model){
+            <tr>
+                <td class="display-field">
+                    @Html.DisplayFor(modelItem => item.SongName)
+                </td>
+
+                <td class="display-field">
+                    @Html.DisplayFor(modelItem => item.SongType)
+                </td>
+            <td id="Contolls">
+                @Html.ActionLink("Details","FullDescription",Model)
+                @if(User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete","Delete",new { SongsID=item.SongsID })
+                    @Html.ActionLink("Edit", "Edit", new { SongsID=item.SongsID })
+                }
+            </td>
+         </tr>
+            }
+        }
+    </table>
+</fieldset>

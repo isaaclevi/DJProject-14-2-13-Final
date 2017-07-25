@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DJProject.Models.Songs>
+
+@{
+    ViewBag.Title = "Songs List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    <li>@Html.ActionLink("List Of Songs","ListOfSongs")</li>
+    <li>@Html.ActionLink("List Of Partial Songs","SearchSongs")</li>
+</ul>

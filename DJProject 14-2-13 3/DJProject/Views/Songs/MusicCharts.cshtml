@@ -1,0 +1,29 @@
+﻿@model IEnumerable< DJProject.Models.Songs>
+@{
+    ViewBag.Title = "MusicCharts";
+}
+
+<h2>MusicCharts</h2>
+
+	<div id="content">
+		<div id="mainContent">
+            @if(Model!=null)
+            {
+                <table>
+                @foreach (var Song in Model)
+                {
+                    <tr>
+                        <td>
+                        @Html.Partial("_PartialViewSongsUsers",Song) 
+                        </td>
+                        <td>
+                        <iframe type="text/html" width="340" height="200" src="http://www.youtube.com/embed/@Song.Path"+ frameborder="0">
+                        </iframe>
+                        </td>
+                    </tr>  
+                }
+                </table>
+            }
+
+		</div>
+	</div>
